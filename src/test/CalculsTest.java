@@ -3,7 +3,7 @@ package test;
 import main.Calculs;
 import static org.junit.Assert.*;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.Before;
 
 public class CalculsTest {
 
@@ -11,13 +11,8 @@ public class CalculsTest {
     private Calculs c2 = null;
     private Calculs c3 = null;
 
-    private final Calculs calculator = new Calculs(10, 5);
-
-    /**
-     * Initialise les valeurs avant chaque test
-     */
-    @BeforeEach
-    void setUp() throws Exception
+    @Before
+    public void setUp() throws Exception
     {
         c1 = new Calculs(1,2);
         c2 = new Calculs(10,20);
@@ -26,25 +21,29 @@ public class CalculsTest {
 
     @Test
     public void multiplier() {
-        if(c1.multiplier() != 2)
-        {
-            fail("Methode multiplier non conforme 2*1=2 ne fonctionne pas.");
-        }
         assertEquals(c1.multiplier(), 2);
+        assertEquals(c2.multiplier(), 200);
+        assertEquals(c3.multiplier(), 20000);
     }
 
     @Test
     public void additionner() {
-        assertEquals(15, this.calculator.additionner());
+        assertEquals(c1.additionner(), 3);
+        assertEquals(c2.additionner(), 30);
+        assertEquals(c3.additionner(), 300);
     }
 
     @Test
     public void diviser() {
-        assertEquals(2, this.calculator.diviser());
+        assertEquals(c1.diviser(), 1/2);
+        assertEquals(c2.diviser(), 1/2);
+        assertEquals(c3.diviser(), 1/2);
     }
 
     @Test
     public void soustraire() {
-        assertEquals(5, this.calculator.soustraire());
+        assertEquals(c1.soustraire(), -1);
+        assertEquals(c2.soustraire(), -10);
+        assertEquals(c3.soustraire(), -100);
     }
 }
