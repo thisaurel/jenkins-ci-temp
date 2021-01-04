@@ -1,3 +1,5 @@
+package main;
+
 public class Calculs
 {
         private final int operande1;
@@ -8,24 +10,24 @@ public class Calculs
                 this.operande1 = operande1;
                 this.operande2 = operande2;
         }
-        
+
         public int multiplier()
         {
                 return operande1 * operande2;
         }
-        
+
         public int additionner()
         {
                 return operande1 + operande2;
         }
-        
+
         public int diviser()
         {
                 return operande1 / operande2;
         }
-        
+
         public int soustraire()
         {
                 return operande1 - operande2;
-        }        
+        }
 }
